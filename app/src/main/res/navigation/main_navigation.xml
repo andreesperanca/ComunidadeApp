@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/inicioFragment">
+
+    <fragment
+        android:id="@+id/inicioFragment"
+        android:name="com.andreesperanca.quegrupobom.ui.fragments.InicioFragment"
+        android:label="fragment_inicio"
+        tools:layout="@layout/fragment_inicio" >
+        <action
+            android:id="@+id/action_homeFragment_to_buscarComunidadesPorNome"
+            app:destination="@id/buscarComunidadesPorNome" />
+        <action
+            android:id="@+id/action_homeFragment_to_categoriaFragment"
+            app:destination="@id/categoriaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/buscarComunidadesPorNome"
+        android:name="com.andreesperanca.quegrupobom.ui.fragments.BuscarComunidadeFragment"
+        android:label="fragment_buscar_categoria"
+        tools:layout="@layout/fragment_buscar_por_nome" >
+        <action
+            android:id="@+id/action_buscarComunidadesPorNome_to_detalhesComunidade"
+            app:destination="@id/detalhesComunidade" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoriaFragment"
+        android:name="com.andreesperanca.quegrupobom.ui.fragments.CategoriaFragment"
+        android:label="fragment_categoria"
+        tools:layout="@layout/fragment_categoria" />
+    <fragment
+        android:id="@+id/detalhesComunidade"
+        android:name="com.andreesperanca.quegrupobom.DetalhesComunidade"
+        android:label="fragment_detalhes_comunidade"
+        tools:layout="@layout/fragment_detalhes_comunidade" >
+        <argument
+            android:name="comunidade"
+            app:argType="com.andreesperanca.quegrupobom.models.Comunidade" />
+    </fragment>
+
+</navigation>

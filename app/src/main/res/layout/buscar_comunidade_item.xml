@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/buscar_comunidade_item_background"
+    android:padding="16dp">
+
+    <androidx.cardview.widget.CardView
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/cardViewLayout"
+        app:cardCornerRadius="64dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_comunidadeFoto"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        android:layout_width="70dp"
+        android:layout_height="match_parent"
+        android:src="@drawable/caramelo"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:id="@+id/tv_nomeComunidade"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gray2"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:text="COMUNIDADE DO SAFADÃO"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toEndOf="@id/seta"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/cardViewLayout"
+        />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/seta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_gravity="center"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentEnd="true"
+        android:backgroundTint="@android:color/transparent"
+        android:src="@drawable/ic_seta_direita" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
