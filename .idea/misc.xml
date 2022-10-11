@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/GitHub Projects/ComunidadesApp/app/src/main/res/drawable-v24/ic_seta_esquerda_branca.xml" value="0.186" />
+        <entry key="..\:/GitHub Projects/ComunidadesApp/app/src/main/res/drawable/sombras.xml" value="0.132" />
+        <entry key="..\:/GitHub Projects/ComunidadesApp/app/src/main/res/layout/coringalayout.xml" value="0.2" />
+        <entry key="..\:/GitHub Projects/ComunidadesApp/app/src/main/res/layout/fragment_detalhes_comunidade.xml" value="0.22" />
+        <entry key="..\:/GitHub Projects/ComunidadesApp/app/src/main/res/layout/layout.xml" value="0.21510416666666668" />
         <entry key="..\:/QueGrupoBom/app/src/main/res/drawable-v24/ic_seta_esquerda_preta.xml" value="0.1" />
         <entry key="..\:/QueGrupoBom/app/src/main/res/drawable-v24/placeholder.xml" value="0.128" />
         <entry key="..\:/QueGrupoBom/app/src/main/res/drawable-v24/sombras.xml" value="0.128" />

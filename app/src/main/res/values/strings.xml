@@ -7,4 +7,6 @@
     <string name="favoritos">Favoritos</string>
     <string name="buscarComunidades">Buscar comunidades</string>
     <string name="buscarComunidadePorCategoria">Buscar comunidades por categoria</string>
+    <string name="descricao">Descrição da comunidade</string>
+    <string name="regrasComunidade">Regras: %1$s </string>
 </resources>
