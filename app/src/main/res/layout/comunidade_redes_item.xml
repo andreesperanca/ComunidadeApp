@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ly_redesSociais"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/primary_color"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:weightSum="3">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_telegram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/ic_telegram" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_youtube"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/ic_youtube" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_discord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/ic_discord" />
+</androidx.appcompat.widget.LinearLayoutCompat>

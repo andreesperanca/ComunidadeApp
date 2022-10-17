@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/comunidadeDetalhes"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="3"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/primary_color"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_visualizacao" />
+
+        <TextView
+            android:id="@+id/tv_visualizacoes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="3000"
+            android:textColor="@color/white" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_color"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_calendario" />
+
+        <TextView
+            android:id="@+id/tv_dataCriacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            tools:text="21/08/2000"
+            android:textColor="@color/white" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_color"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_admininistrador" />
+
+        <TextView
+            android:id="@+id/tv_nomeAdministrador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            tools:text="Andre"
+            android:textColor="@color/white" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
+

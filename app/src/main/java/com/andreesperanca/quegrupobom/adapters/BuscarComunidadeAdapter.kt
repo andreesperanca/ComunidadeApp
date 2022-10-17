@@ -8,6 +8,7 @@ import com.andreesperanca.quegrupobom.R
 import com.andreesperanca.quegrupobom.adapters.BuscarComunidadeAdapter.BuscarComunidadeViewHolder
 import com.andreesperanca.quegrupobom.databinding.BuscarComunidadeItemBinding
 import com.andreesperanca.quegrupobom.models.Comunidade
+import com.andreesperanca.quegrupobom.ui.fragments.BuscarComunidadeFragmentDirections
 
 class BuscarComunidadeAdapter() : RecyclerView.Adapter<BuscarComunidadeViewHolder>() {
 
@@ -28,7 +29,7 @@ class BuscarComunidadeAdapter() : RecyclerView.Adapter<BuscarComunidadeViewHolde
 
     fun atualizar(adapterList: List<Comunidade>) {
         adapterList.let {
-            if(adapterList.isNotEmpty()) {
+            if (adapterList.isNotEmpty()) {
                 comunidadeList = adapterList
                 notifyDataSetChanged()
             } else {
@@ -46,7 +47,11 @@ class BuscarComunidadeAdapter() : RecyclerView.Adapter<BuscarComunidadeViewHolde
             binding.tvNomeComunidade.text = comunidade.nome
 
             binding.root.setOnClickListener {
-                it.findNavController().navigate(R.id.action_buscarComunidadesPorNome_to_detalhesComunidade)
+                val action =
+                    BuscarComunidadeFragmentDirections.actionBuscarComunidadesPorNomeToDetalhesComunidade(
+                        comunidade
+                    )
+                it.findNavController().navigate(action)
             }
         }
     }

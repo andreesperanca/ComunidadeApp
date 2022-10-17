@@ -25,11 +25,10 @@ class BuscarComunidadeFragment : BaseFragment<FragmentBuscarPorNomeBinding>(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         configureAdapter()
         configureSwiper()
         binding.buscarComunidadesPorNome.doOnTextChanged { text, _, _, _ ->
-            val list = buscarComunidadePorNome(MockData(requireContext()).buscarComunidades, text.toString())
+            val list = buscarComunidadePorNome(MockData(requireContext()).fragmentBuscarComunidades, text.toString())
             adapter.atualizar(list)
         }
     }
@@ -47,7 +46,7 @@ class BuscarComunidadeFragment : BaseFragment<FragmentBuscarPorNomeBinding>(
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 val action =
                     BuscarComunidadeFragmentDirections.actionBuscarComunidadesPorNomeToDetalhesComunidade(
-                        data.buscarComunidades[viewHolder.adapterPosition]
+                        data.buscarComunidadesGenericas[viewHolder.adapterPosition]
                     )
                 findNavController().navigate(action)
             }

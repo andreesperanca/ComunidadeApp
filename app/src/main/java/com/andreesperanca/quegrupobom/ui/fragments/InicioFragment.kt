@@ -11,6 +11,7 @@ import com.andreesperanca.quegrupobom.adapters.CategoriaDestaquesAdapter
 import com.andreesperanca.quegrupobom.adapters.ComunidadeDestaqueAdapter
 import com.andreesperanca.quegrupobom.data.remote.MockData
 import com.andreesperanca.quegrupobom.databinding.FragmentInicioBinding
+import kotlinx.coroutines.selects.select
 
 
 class InicioFragment : BaseFragment<FragmentInicioBinding>(
@@ -18,7 +19,7 @@ class InicioFragment : BaseFragment<FragmentInicioBinding>(
 ) {
 
     private val data by lazy { MockData(requireContext()) }
-    private val adapter by lazy { ComunidadeDestaqueAdapter(data.buscarComunidadesDestaques()) }
+    private val adapter by lazy { ComunidadeDestaqueAdapter(data.buscarTresDestaques) }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -36,7 +37,6 @@ class InicioFragment : BaseFragment<FragmentInicioBinding>(
     private fun configureCarouselAdapter() {
         binding.rvDestaqueComunidade.adapter = adapter
         binding.rvDestaqueComunidade.setAlpha(true)
-        binding.rvDestaqueComunidade.setInfinite(true)
     }
     override fun configureToolbar() {
         binding.tbInicioToolbar.apply {

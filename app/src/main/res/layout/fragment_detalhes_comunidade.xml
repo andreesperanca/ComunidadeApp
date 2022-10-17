@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -8,176 +9,89 @@
         android:background="@color/primary_color"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         tools:context=".DetalhesComunidade">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/comunidade_toolbar"
-            android:elevation="0dp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme"
-            android:background="@android:color/transparent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.appcompat.widget.AppCompatImageView
+        <ImageView
             android:id="@+id/iv_comunidadeBanner"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:scaleType="centerCrop"
+            android:src="@drawable/sombras"
             app:layout_constraintDimensionRatio="16:9"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/comunidade_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_nomeComunidade"
-            tools:text="NOME DA COMUNIDADE"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/descricao"
+            android:text="Nome da comunidade"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:textSize="25sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iv_comunidadeBanner" />
 
-        <androidx.appcompat.widget.LinearLayoutCompat
+
+        <com.andreesperanca.quegrupobom.util.custom.ComunidadeInfoCustom
             android:id="@+id/comunidadeDetalhes"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_nomeComunidade"
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:weightSum="3"
-            android:layout_height="match_parent">
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:background="@color/primary_color"
-                android:orientation="horizontal"
-                android:padding="8dp"
-                xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:src="@drawable/ic_visualizacao"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:layout_marginStart="5dp"
-                    android:textColor="@color/white"
-                    android:text="3000"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:background="@color/primary_color"
-                android:orientation="horizontal"
-                android:padding="8dp"
-                xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:src="@drawable/ic_visualizacao"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:layout_marginStart="5dp"
-                    android:textColor="@color/white"
-                    android:text="3000"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:background="@color/primary_color"
-                android:orientation="horizontal"
-                android:padding="8dp"
-                xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:src="@drawable/ic_visualizacao"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:layout_marginStart="5dp"
-                    android:textColor="@color/white"
-                    android:text="3000"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
             android:id="@+id/tv_redesSociaisTitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
-            tools:text="Redes sociais:"
+            android:text="Redes sociais:"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/comunidadeDetalhes" />
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/ly_redesSociais"
-            android:background="@color/primary_color"
-            android:orientation="horizontal"
-            android:padding="8dp"
-            android:weightSum="3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
+        <com.andreesperanca.quegrupobom.util.custom.ComunidadeRedesCustom
+            android:id="@+id/redesSociais"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_redesSociaisTitulo">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_weight="1"
-                android:src="@drawable/ic_telegram"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_weight="1"
-                android:src="@drawable/ic_youtube"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_weight="1"
-                android:src="@drawable/ic_discord"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-        </androidx.appcompat.widget.LinearLayoutCompat>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_redesSociaisTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_descricaoTitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
-            tools:text="Descrição:"
+            android:text="@string/detalhes"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ly_redesSociais" />
-
+            app:layout_constraintTop_toBottomOf="@id/redesSociais" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_descricao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Você que trabalha com afiliado e ou está iniciando nessa area, e busca formas de divulgar os seus links de afiliado para mais pessoas, acesse o site Cursos para fazer, nele você poderá cadastrar cursos, ebooks gratis e divulgar para várias pessoas."
+            tools:text="Você que trabalha com afiliado e ou está iniciando nessa area, e busca formas de divulgar os seus links de afiliado para mais pessoas, acesse o site Cursos para fazer, nele você poderá cadastrar cursos, ebooks gratis e divulgar para várias pessoas."
             android:textSize="15sp"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
@@ -186,9 +100,11 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_regrasTitulo"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Regras:"
+            android:text="@string/regrasComunidade"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -212,9 +128,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
             android:textSize="20sp"
             android:textColor="@color/white"
-            android:text="Recomendados para você"
+            android:text="@string/recomendados"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_regras"/>
@@ -225,6 +143,5 @@
             android:layout_height="match_parent"
             app:layout_constraintTop_toBottomOf="@id/tv_recomendadosTitulo"
             app:layout_constraintBottom_toBottomOf="parent" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+</androidx.core.widget.NestedScrollView>

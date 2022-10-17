@@ -1,49 +1,108 @@
 package com.andreesperanca.quegrupobom.data.remote
 
 import android.content.Context
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import com.andreesperanca.quegrupobom.R
 import com.andreesperanca.quegrupobom.models.Categoria
 import com.andreesperanca.quegrupobom.models.Comunidade
+import java.text.SimpleDateFormat
+import java.time.Instant
+import java.time.LocalDateTime
+import java.util.*
 
 class MockData(private val context: Context) {
 
-    val buscarComunidades: List<Comunidade> = listOf(
-        Comunidade("Memes", ContextCompat.getDrawable(context, R.drawable.glass)!!),
-        Comunidade("Cachorros", ContextCompat.getDrawable(context, R.drawable.glass)!!),
-        Comunidade("abc", ContextCompat.getDrawable(context, R.drawable.beach_bum)!!),
-        Comunidade("abcd", ContextCompat.getDrawable(context, R.drawable.glass)!!),
-        Comunidade("abcde", ContextCompat.getDrawable(context, R.drawable.glass)!!),
-        Comunidade("abcdef", ContextCompat.getDrawable(context, R.drawable.beach_bum)!!),
-        Comunidade("abcdefg", ContextCompat.getDrawable(context, R.drawable.glass)!!),
-        Comunidade("abcdefgh", ContextCompat.getDrawable(context, R.drawable.glass)!!),
-        Comunidade("abcdefghi", ContextCompat.getDrawable(context, R.drawable.beach_bum)!!),
-        Comunidade("abcdefghij", ContextCompat.getDrawable(context, R.drawable.glass)!!),
-        Comunidade("abcdefghijk", ContextCompat.getDrawable(context, R.drawable.glass)!!),
 
+    val buscarTresDestaques: List<Comunidade> = listOf(
+        Comunidade("Teste",
+            ContextCompat.getDrawable(context, R.drawable.ad_astra)!!,
+            "20",
+            "21/08/2000",
+            "Andre",
+            "Descrição boa",
+            "Regras Boas"
+            ),
+        Comunidade("Teste",
+            ContextCompat.getDrawable(context, R.drawable.ad_astra)!!,
+            "20",
+            "21/08/2000",
+            "Andre",
+            "Descrição boa",
+            "Regras Boas"
+        ),
+        Comunidade("Teste",
+            ContextCompat.getDrawable(context, R.drawable.ad_astra)!!,
+            "20",
+            "21/08/2000",
+            "Andre",
+            "Descrição boa",
+            "Regras Boas"
+        ))
 
+    val fragmentBuscarComunidades : List<Comunidade> = listOf(
+        Comunidade("Teste",
+            ContextCompat.getDrawable(context, R.drawable.ad_astra)!!,
+            "20",
+            "21/08/2000",
+            "Andre",
+            "Descrição boa",
+            "Regras Boas"
+        ),
+        Comunidade("Teste2",
+            ContextCompat.getDrawable(context, R.drawable.ad_astra)!!,
+            "20",
+            "21/08/2000",
+            "Andre",
+            "Descrição boa",
+            "Regras Boas"
+        ),
+        Comunidade("Teste3",
+            ContextCompat.getDrawable(context, R.drawable.ad_astra)!!,
+            "20",
+            "21/08/2000",
+            "Andre",
+            "Descrição boa",
+            "Regras Boas"
+        )
     )
 
-    fun buscarComunidadesDestaques(): List<Comunidade> = listOf<Comunidade>(
-        Comunidade("Teste", ContextCompat.getDrawable(context, R.drawable.ad_astra)!!),
-        Comunidade("Teste", ContextCompat.getDrawable(context, R.drawable.beach_bum)!!),
-        Comunidade("Teste", ContextCompat.getDrawable(context, R.drawable.beach_bum)!!),
-        Comunidade("Teste", ContextCompat.getDrawable(context, R.drawable.beach_bum)!!),
-        Comunidade("Teste", ContextCompat.getDrawable(context, R.drawable.beach_bum)!!),
-        Comunidade("Teste", ContextCompat.getDrawable(context, R.drawable.beach_bum)!!),
-        Comunidade("Teste", ContextCompat.getDrawable(context, R.drawable.beach_bum)!!),
-        Comunidade("Teste", ContextCompat.getDrawable(context, R.drawable.glass)!!)
+    val buscarComunidadesGenericas: List<Comunidade> = listOf(
+        Comunidade("Teste",
+            ContextCompat.getDrawable(context, R.drawable.ad_astra)!!,
+            "20",
+            "21/08/2000",
+            "Andre",
+            "Descrição boa",
+            "Regras Boas"
+        ), Comunidade("Teste",
+            ContextCompat.getDrawable(context, R.drawable.ad_astra)!!,
+            "20",
+            "21/08/2000",
+            "Andre",
+            "Descrição boa",
+            "Regras Boas"
+        ), Comunidade("Teste",
+            ContextCompat.getDrawable(context, R.drawable.ad_astra)!!,
+            "20",
+            "21/08/2000",
+            "Andre",
+            "Descrição boa",
+            "Regras Boas"
+        ),
+
     )
 
     fun buscarCategoriasDestaques() : List<Categoria> = listOf(
-        Categoria("Memes", buscarComunidadesDestaques()),
-        Categoria("Estudos", buscarComunidadesDestaques()),
-        Categoria("Pipoca e ação", buscarComunidadesDestaques()),
-        Categoria("Culinária", buscarComunidadesDestaques())
+        Categoria("Memes", buscarComunidadesGenericas),
+        Categoria("Estudos", buscarComunidadesGenericas),
+        Categoria("Pipoca e ação", buscarComunidadesGenericas),
+        Categoria("Culinária", buscarComunidadesGenericas)
     )
 
     fun buscarComunidadePorCategoria() : List<Categoria> = listOf(
-        Categoria("Memes", buscarComunidadesDestaques()),
+        Categoria("Memes", buscarTresDestaques),
         Categoria("Casa", emptyList()),
     )
 }

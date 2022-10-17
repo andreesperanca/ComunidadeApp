@@ -4,8 +4,13 @@ import android.os.Bundle
 import android.view.View
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView.HORIZONTAL
+import com.andreesperanca.quegrupobom.adapters.ComunidadesRecomendadasAdapter
 import com.andreesperanca.quegrupobom.databinding.FragmentDetalhesComunidadeBinding
 import com.andreesperanca.quegrupobom.util.generics.BaseFragment
+import com.google.android.material.snackbar.Snackbar
 
 
 class DetalhesComunidade : BaseFragment<FragmentDetalhesComunidadeBinding>(
@@ -15,13 +20,34 @@ class DetalhesComunidade : BaseFragment<FragmentDetalhesComunidadeBinding>(
     private val args: DetalhesComunidadeArgs by navArgs()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.ivComunidadeBanner.setImageDrawable(args.comunidade.image)
-        binding.tvNomeComunidade.text = "Comunidade dos nerds"
-        binding.tvRedesSociaisTitulo.text = "Redes sociais"
-        binding.tvDescricaoTitulo.text = "Descrição grupo"
-        binding.tvDescricaoComunidade.text = "aqui tem uma descricao bem bonita"
-        binding.tvRegrasComunidadeTitle.text = "Regras comunidade"
-        binding.tvRegrasComunidade.text = "Aqui tem as regras bem bonitas"
+
+        populandoFragment()
+        configureRecyclerView()
+    }
+
+    private fun configureRecyclerView() {
+        binding.rvRecomendados.adapter = ComunidadesRecomendadasAdapter(requireContext())
+        binding.rvRecomendados.layoutManager = LinearLayoutManager(requireContext(), HORIZONTAL,false)
+    }
+
+    private fun populandoFragment() {
+        with(binding) {
+            val comunidade = args.comunidade
+            ivComunidadeBanner.setImageDrawable(args.comunidade.image)
+            tvNomeComunidade.text = comunidade.nome
+            tvDescricao.text = comunidade.descricao
+            tvRegras.text = comunidade.regras
+            redesSociais.apply {
+                acaoDiscordClique { Snackbar.make(binding.root, "Discord",Snackbar.LENGTH_LONG).show() }
+                acaoTelegramClique {  Snackbar.make(binding.root, "Telegram",Snackbar.LENGTH_LONG).show() }
+                acaoYoutubeClique {   Snackbar.make(binding.root, "Youtube",Snackbar.LENGTH_LONG).show() }
+            }
+            comunidadeDetalhes.apply {
+                colocarAdministrador(comunidade.criadorComunidade)
+                colocarDataCriacao(comunidade.dataCriacao)
+                colocarVisualizacoes(comunidade.visualizacoes)
+            }
+        }
     }
 
     override fun configureToolbar() {

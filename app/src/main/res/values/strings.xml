@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">App Comunidades</string>
     <string name="destaques">Comunidades em destaque</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -8,5 +8,7 @@
     <string name="buscarComunidades">Buscar comunidades</string>
     <string name="buscarComunidadePorCategoria">Buscar comunidades por categoria</string>
     <string name="descricao">Descrição da comunidade</string>
-    <string name="regrasComunidade">Regras: %1$s </string>
+    <string name="regrasComunidade">Regras:</string>
+    <string name="detalhes">Detalhes:</string>
+    <string name="recomendados">Recomendados para você</string>
 </resources>
