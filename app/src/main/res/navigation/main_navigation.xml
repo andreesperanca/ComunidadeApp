@@ -8,19 +8,19 @@
 
     <fragment
         android:id="@+id/inicioFragment"
-        android:name="com.andreesperanca.quegrupobom.ui.fragments.InicioFragment"
+        android:name="com.andreesperanca.quegrupobom.ui.inicio.InicioFragment"
         android:label="fragment_inicio"
         tools:layout="@layout/fragment_inicio" >
         <action
-            android:id="@+id/action_homeFragment_to_buscarComunidadesPorNome"
+            android:id="@+id/action_inicioFragment_to_buscarComunidadesPorNome"
             app:destination="@id/buscarComunidadesPorNome" />
         <action
-            android:id="@+id/action_homeFragment_to_categoriaFragment"
+            android:id="@+id/action_inicioFragment_to_categoriaFragment"
             app:destination="@id/categoriaFragment" />
     </fragment>
     <fragment
         android:id="@+id/buscarComunidadesPorNome"
-        android:name="com.andreesperanca.quegrupobom.ui.fragments.BuscarComunidadeFragment"
+        android:name="com.andreesperanca.quegrupobom.ui.buscar.BuscarComunidadeFragment"
         android:label="fragment_buscar_categoria"
         tools:layout="@layout/fragment_buscar_por_nome" >
         <action
@@ -29,12 +29,12 @@
     </fragment>
     <fragment
         android:id="@+id/categoriaFragment"
-        android:name="com.andreesperanca.quegrupobom.ui.fragments.CategoriaFragment"
+        android:name="com.andreesperanca.quegrupobom.ui.categoria.CategoriaFragment"
         android:label="fragment_categoria"
         tools:layout="@layout/fragment_categoria" />
     <fragment
         android:id="@+id/detalhesComunidade"
-        android:name="com.andreesperanca.quegrupobom.DetalhesComunidade"
+        android:name="com.andreesperanca.quegrupobom.ui.details.DetalhesComunidade"
         android:label="fragment_detalhes_comunidade"
         tools:layout="@layout/fragment_detalhes_comunidade" >
         <argument

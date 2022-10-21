@@ -5,20 +5,19 @@
     <item
         android:id="@+id/procurarPorNome"
         android:icon="@drawable/ic_lupa"
-        app:showAsAction="ifRoom"
+        app:showAsAction="always"
         android:title="@string/procurar"/>
+    <item
+        android:id="@+id/buscarPorFavoritos"
+        android:icon="@drawable/ic_baseline_favorite_24"
+        android:title="@string/favoritos"
+        app:showAsAction="always"  />
 
     <item
         android:id="@+id/buscarPorCategoria"
         android:icon="@drawable/ic_menu"
         android:title="@string/buscarComunidadePorCategoria"
-        app:showAsAction="ifRoom" />
-
-    <item
-        android:id="@+id/buscarPorFavoritos"
-        android:icon="@drawable/ic_baseline_favorite_24"
-        android:title="@string/favoritos"
-        app:showAsAction="ifRoom"  />
+        app:showAsAction="always" />
 
 </menu>
 

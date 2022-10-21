@@ -4,10 +4,10 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.andreesperanca.quegrupobom.adapters.ComunidadesRecomendadasAdapter.*
+import com.andreesperanca.quegrupobom.adapters.ComunidadesRecomendadasAdapter.ComunidadesRecomendadasViewHolder
 import com.andreesperanca.quegrupobom.data.remote.MockData
-import com.andreesperanca.quegrupobom.databinding.ComunidadeItemBinding
 import com.andreesperanca.quegrupobom.models.Comunidade
+import com.andreesperanca.quegrupobom.databinding.ComunidadeItemBinding
 
 class ComunidadesRecomendadasAdapter(context: Context) : RecyclerView.Adapter<ComunidadesRecomendadasViewHolder>() {
 

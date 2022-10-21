@@ -1,36 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:background="@color/primary_color"
-    android:orientation="vertical"
-    tools:context=".ui.fragments.BuscarComunidadeFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/tb_inicioToolbar"
+    <data>
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:titleTextColor="@color/white" />
+        android:layout_height="match_parent"
+        tools:background="@color/primary_color"
+        android:orientation="vertical"
+        tools:context=".ui.buscar.BuscarComunidadeFragment">
 
-    <EditText
-        android:id="@+id/buscarComunidadesPorNome"
-        android:layout_gravity="center"
-        android:layout_width="match_parent"
-        android:textAlignment="center"
-        android:layout_marginHorizontal="15dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/background_app_motion_layout"
-        android:hint="@string/busqueComunidadesPorNome"
-        android:padding="16dp"
-        android:textSize="15sp" />
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tb_inicioToolbar"
+            android:background="@color/primary_dark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:titleTextColor="@color/white" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_buscarComunidade"
-        android:layout_margin="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        <EditText
+            android:id="@+id/buscarComunidadesPorNome"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:textAlignment="center"
+            android:layout_marginHorizontal="15dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_app_motion_layout"
+            android:hint="@string/busqueComunidadesPorNome"
+            android:padding="16dp"
+            android:textSize="15sp" />
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_buscarComunidade"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

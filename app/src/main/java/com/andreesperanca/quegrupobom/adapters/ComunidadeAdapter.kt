@@ -4,8 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.andreesperanca.quegrupobom.adapters.ComunidadeAdapter.ComunidadeViewHolder
-import com.andreesperanca.quegrupobom.databinding.ComunidadeItemBinding
 import com.andreesperanca.quegrupobom.models.Comunidade
+import com.andreesperanca.quegrupobom.databinding.ComunidadeItemBinding
 
 class ComunidadeAdapter(private val comunidades: List<Comunidade>) :
     RecyclerView.Adapter<ComunidadeViewHolder>() {

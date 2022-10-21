@@ -1,4 +1,4 @@
-package com.andreesperanca.quegrupobom.ui.fragments
+package com.andreesperanca.quegrupobom.ui.categoria
 
 import android.os.Bundle
 import android.view.View
@@ -6,17 +6,17 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.andreesperanca.quegrupobom.R
 import com.andreesperanca.quegrupobom.adapters.BuscarComunidadeAdapter
 import com.andreesperanca.quegrupobom.data.remote.MockData
-import com.andreesperanca.quegrupobom.databinding.FragmentCategoriaBinding
 import com.andreesperanca.quegrupobom.models.Categoria
 import com.andreesperanca.quegrupobom.models.Comunidade
 import com.andreesperanca.quegrupobom.util.generics.BaseFragment
+import com.andreesperanca.quegrupobom.R
+import com.andreesperanca.quegrupobom.databinding.FragmentCategoriaBinding
 
 
 class CategoriaFragment : BaseFragment<FragmentCategoriaBinding>(
-    FragmentCategoriaBinding::inflate), AdapterView.OnItemSelectedListener
+    R.layout.fragment_categoria), AdapterView.OnItemSelectedListener
 {
 
     private lateinit var  adapter: BuscarComunidadeAdapter
@@ -57,12 +57,19 @@ class CategoriaFragment : BaseFragment<FragmentCategoriaBinding>(
         val categoria = listCategorias.filter { categoria -> categoria.titulo == termosDeBusca }
         return categoria.first().comunidades
     }
-    override fun configureToolbar() {
+
+    override fun setupToolbar() {
         binding.tbInicioToolbar.apply {
             title = getString(R.string.buscarComunidadePorCategoria)
             setNavigationIcon(R.drawable.ic_seta_esquerda_branca)
             setNavigationOnClickListener { findNavController().popBackStack() }
         }
+    }
+    override fun setupViewModel() {
+
+    }
+    override fun setupObservers() {
+
     }
 }
 

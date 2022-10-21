@@ -11,10 +11,6 @@ class MainActivity() : AppCompatActivity() {
         ActivityMainBinding.inflate(layoutInflater)
     }
 
-    //    val txtWatcher: EditText
-//        get() = binding.customToolbar
-//
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)

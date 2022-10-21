@@ -1,147 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:background="@color/primary_color"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:context=".DetalhesComunidade">
+        android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/iv_comunidadeBanner"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/sombras"
-            app:layout_constraintDimensionRatio="16:9"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/comunidade_toolbar"
+        <androidx.constraintlayout.widget.ConstraintLayout android:background="@color/primary_color"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            app:layout_constraintTop_toTopOf="parent" />
+            tools:context=".DetalhesComunidade">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_nomeComunidade"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nome da comunidade"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:textStyle="bold"
-            android:textColor="@color/white"
-            android:textSize="25sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/iv_comunidadeBanner" />
+            <ImageView
+                android:id="@+id/iv_comunidadeBanner"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/sombras"
+                app:layout_constraintDimensionRatio="16:9"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/comunidade_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_nomeComunidade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nome da comunidade"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_comunidadeBanner" />
 
 
-        <com.andreesperanca.quegrupobom.util.custom.ComunidadeInfoCustom
-            android:id="@+id/comunidadeDetalhes"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_nomeComunidade"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            <com.andreesperanca.quegrupobom.util.custom.ComunidadeInfoCustom
+                android:id="@+id/comunidadeDetalhes"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_nomeComunidade"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:id="@+id/tv_redesSociaisTitulo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:text="Redes sociais:"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/comunidadeDetalhes" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:id="@+id/tv_redesSociaisTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="Redes sociais:"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/comunidadeDetalhes" />
 
-        <com.andreesperanca.quegrupobom.util.custom.ComunidadeRedesCustom
-            android:id="@+id/redesSociais"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_redesSociaisTitulo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            <com.andreesperanca.quegrupobom.util.custom.ComunidadeRedesCustom
+                android:id="@+id/redesSociais"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_redesSociaisTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_descricaoTitulo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:text="@string/detalhes"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/redesSociais" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_descricaoTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="@string/detalhes"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/redesSociais" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_descricao"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:text="Você que trabalha com afiliado e ou está iniciando nessa area, e busca formas de divulgar os seus links de afiliado para mais pessoas, acesse o site Cursos para fazer, nele você poderá cadastrar cursos, ebooks gratis e divulgar para várias pessoas."
-            android:textSize="15sp"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_descricaoTitulo" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_descricao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Você que trabalha com afiliado e ou está iniciando nessa area, e busca formas de divulgar os seus links de afiliado para mais pessoas, acesse o site Cursos para fazer, nele você poderá cadastrar cursos, ebooks gratis e divulgar para várias pessoas."
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_descricaoTitulo" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_regrasTitulo"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/regrasComunidade"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_descricao" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_regrasTitulo"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/regrasComunidade"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_descricao" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_regras"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Aqui não poderá ter conteúdos agressivos e ativos sobre o guaraná mais famoso do brasil pq aqui a gente respeita todos e todas e ninguem pode ficar de fora quando o assunto é respeito."
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_regrasTitulo" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_regras"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Aqui não poderá ter conteúdos agressivos e ativos sobre o guaraná mais famoso do brasil pq aqui a gente respeita todos e todas e ninguem pode ficar de fora quando o assunto é respeito."
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_regrasTitulo" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_recomendadosTitulo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:textSize="20sp"
-            android:textColor="@color/white"
-            android:text="@string/recomendados"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_regras"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_recomendadosTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:text="@string/recomendados"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_regras" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_recomendados"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_recomendadosTitulo"
-            app:layout_constraintBottom_toBottomOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_recomendados"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_recomendadosTitulo"
+                app:layout_constraintBottom_toBottomOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

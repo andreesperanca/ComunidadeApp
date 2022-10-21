@@ -4,15 +4,15 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.andreesperanca.quegrupobom.R
-import com.andreesperanca.quegrupobom.adapters.BuscarComunidadeAdapter.BuscarComunidadeViewHolder
-import com.andreesperanca.quegrupobom.databinding.BuscarComunidadeItemBinding
+import com.andreesperanca.quegrupobom.adapters.BuscarComunidadeAdapter.*
 import com.andreesperanca.quegrupobom.models.Comunidade
-import com.andreesperanca.quegrupobom.ui.fragments.BuscarComunidadeFragmentDirections
+import com.andreesperanca.quegrupobom.databinding.BuscarComunidadeItemBinding
+import com.andreesperanca.quegrupobom.ui.buscar.BuscarComunidadeFragmentDirections
+
 
 class BuscarComunidadeAdapter() : RecyclerView.Adapter<BuscarComunidadeViewHolder>() {
 
-    private var comunidadeList: List<Comunidade> = emptyList()
+    private var comunidadeLista: List<Comunidade> = emptyList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BuscarComunidadeViewHolder {
 
@@ -22,18 +22,18 @@ class BuscarComunidadeAdapter() : RecyclerView.Adapter<BuscarComunidadeViewHolde
     }
 
     override fun onBindViewHolder(holder: BuscarComunidadeViewHolder, position: Int) {
-        holder.bind(comunidadeList[position])
+        holder.bind(comunidadeLista[position])
     }
 
-    override fun getItemCount(): Int = comunidadeList.size
+    override fun getItemCount(): Int = comunidadeLista.size
 
     fun atualizar(adapterList: List<Comunidade>) {
         adapterList.let {
             if (adapterList.isNotEmpty()) {
-                comunidadeList = adapterList
+                comunidadeLista = adapterList
                 notifyDataSetChanged()
             } else {
-                comunidadeList = emptyList()
+                comunidadeLista = emptyList()
                 notifyDataSetChanged()
             }
         }

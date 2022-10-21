@@ -4,34 +4,41 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.LayoutRes
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
-import androidx.viewbinding.ViewBinding
 
-
-abstract class BaseFragment<V : ViewBinding>(
-    private val inflate: (inflater: LayoutInflater) -> V
+abstract class BaseFragment<T : ViewDataBinding>(
+    @LayoutRes private val layoutId: Int
 ) : Fragment() {
 
-    private var _binding: V? = null
-
-
-    protected val binding: V
-        get() = _binding as V
+    protected lateinit var binding: T
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        _binding = inflate.invoke(inflater)
-        if (_binding == null) {
-            throw IllegalArgumentException("null binding")
-        }
+    ) = (DataBindingUtil
+        .inflate(inflater, layoutId, container, false) as T)
+        .apply {
+            lifecycleOwner = viewLifecycleOwner
+            binding = this
+            setupToolbar()
+        }.root
 
-        configureToolbar()
-
-        return binding.root
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupViewModel()
+        setupObservers()
     }
 
-    abstract fun configureToolbar()
+    abstract fun setupToolbar()
+    abstract fun setupViewModel()
+    abstract fun setupObservers()
 }
+
+
+
+
+    

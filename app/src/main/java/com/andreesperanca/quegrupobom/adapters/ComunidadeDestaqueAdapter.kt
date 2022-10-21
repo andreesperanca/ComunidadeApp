@@ -2,15 +2,14 @@ package com.andreesperanca.quegrupobom.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.andreesperanca.quegrupobom.R
 import com.andreesperanca.quegrupobom.adapters.ComunidadeDestaqueAdapter.ComunidadeDestaqueViewHolder
 import com.andreesperanca.quegrupobom.databinding.ComunidadeDestaqueItemBinding
-import com.andreesperanca.quegrupobom.databinding.ComunidadeItemBinding
 import com.andreesperanca.quegrupobom.models.Comunidade
 
-class ComunidadeDestaqueAdapter(private val comunidades: List<Comunidade>) : RecyclerView.Adapter<ComunidadeDestaqueViewHolder>() {
+class ComunidadeDestaqueAdapter() : RecyclerView.Adapter<ComunidadeDestaqueViewHolder>() {
+
+    private var comunidades: List<Comunidade> = emptyList()
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -23,6 +22,13 @@ class ComunidadeDestaqueAdapter(private val comunidades: List<Comunidade>) : Rec
 
     override fun onBindViewHolder(holder: ComunidadeDestaqueViewHolder, position: Int) {
         holder.bind(comunidades[position])
+    }
+
+    fun atualizaDestaques(novaLista: List<Comunidade>?) {
+        if(!novaLista.isNullOrEmpty()) {
+            comunidades = novaLista
+            notifyItemChanged(novaLista.size)
+        }
     }
 
     override fun getItemCount(): Int = comunidades.size

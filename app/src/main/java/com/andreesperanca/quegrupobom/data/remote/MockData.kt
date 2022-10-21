@@ -1,16 +1,10 @@
 package com.andreesperanca.quegrupobom.data.remote
 
 import android.content.Context
-import android.os.Build
-import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
-import com.andreesperanca.quegrupobom.R
 import com.andreesperanca.quegrupobom.models.Categoria
 import com.andreesperanca.quegrupobom.models.Comunidade
-import java.text.SimpleDateFormat
-import java.time.Instant
-import java.time.LocalDateTime
-import java.util.*
+import com.andreesperanca.quegrupobom.R
 
 class MockData(private val context: Context) {
 
@@ -25,7 +19,7 @@ class MockData(private val context: Context) {
             "Regras Boas"
             ),
         Comunidade("Teste",
-            ContextCompat.getDrawable(context, R.drawable.ad_astra)!!,
+            ContextCompat.getDrawable(context, R.drawable.beach_bum)!!,
             "20",
             "21/08/2000",
             "Andre",
@@ -33,7 +27,7 @@ class MockData(private val context: Context) {
             "Regras Boas"
         ),
         Comunidade("Teste",
-            ContextCompat.getDrawable(context, R.drawable.ad_astra)!!,
+            ContextCompat.getDrawable(context, R.drawable.glass)!!,
             "20",
             "21/08/2000",
             "Andre",

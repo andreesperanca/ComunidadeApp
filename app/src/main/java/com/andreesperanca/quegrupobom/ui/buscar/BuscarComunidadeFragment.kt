@@ -1,4 +1,4 @@
-package com.andreesperanca.quegrupobom.ui.fragments
+package com.andreesperanca.quegrupobom.ui.buscar
 
 import android.os.Bundle
 import android.view.View
@@ -15,10 +15,12 @@ import com.andreesperanca.quegrupobom.data.remote.MockData
 import com.andreesperanca.quegrupobom.databinding.FragmentBuscarPorNomeBinding
 import com.andreesperanca.quegrupobom.models.Comunidade
 import com.andreesperanca.quegrupobom.util.generics.BaseFragment
+import com.andreesperanca.quegrupobom.util.showKeyBoard
 
-class BuscarComunidadeFragment : BaseFragment<FragmentBuscarPorNomeBinding>(
-    FragmentBuscarPorNomeBinding::inflate
-) {
+class BuscarComunidadeFragment :
+    BaseFragment<FragmentBuscarPorNomeBinding>(
+        R.layout.fragment_buscar_por_nome
+    ) {
 
     private val adapter by lazy { BuscarComunidadeAdapter() }
     private val data by lazy { MockData(requireContext()) }
@@ -27,10 +29,21 @@ class BuscarComunidadeFragment : BaseFragment<FragmentBuscarPorNomeBinding>(
         super.onViewCreated(view, savedInstanceState)
         configureAdapter()
         configureSwiper()
+
         binding.buscarComunidadesPorNome.doOnTextChanged { text, _, _, _ ->
-            val list = buscarComunidadePorNome(MockData(requireContext()).fragmentBuscarComunidades, text.toString())
+            val list = buscarComunidadePorNome(
+                MockData(requireContext()).fragmentBuscarComunidades,
+                text.toString()
+            )
             adapter.atualizar(list)
         }
+        this.showKeyBoard(binding.buscarComunidadesPorNome)
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        this.showKeyBoard(binding.buscarComunidadesPorNome)
     }
 
     private fun configureSwiper() {
@@ -54,6 +67,7 @@ class BuscarComunidadeFragment : BaseFragment<FragmentBuscarPorNomeBinding>(
         val itemTouchHelper = ItemTouchHelper(swipeHandler)
         itemTouchHelper.attachToRecyclerView(binding.rvBuscarComunidade)
     }
+
     private fun configureAdapter() {
         binding.rvBuscarComunidade.adapter = adapter
         val divisor = DividerItemDecoration(requireContext(), LinearLayoutManager.VERTICAL)
@@ -61,6 +75,7 @@ class BuscarComunidadeFragment : BaseFragment<FragmentBuscarPorNomeBinding>(
             LinearLayoutManager(requireContext(), VERTICAL, false)
         binding.rvBuscarComunidade.addItemDecoration(divisor)
     }
+
     private fun buscarComunidadePorNome(comunidades: List<Comunidade>, termosDeBusca: String): List<Comunidade> {
         val returnList = mutableListOf<Comunidade>()
         comunidades.forEach { comunidade ->
@@ -71,7 +86,8 @@ class BuscarComunidadeFragment : BaseFragment<FragmentBuscarPorNomeBinding>(
         }
         return returnList
     }
-    override fun configureToolbar() {
+
+    override fun setupToolbar() {
         binding.tbInicioToolbar.apply {
             setNavigationIcon(R.drawable.ic_seta_esquerda_branca)
             title = getString(R.string.buscarComunidades)
@@ -80,4 +96,11 @@ class BuscarComunidadeFragment : BaseFragment<FragmentBuscarPorNomeBinding>(
             }
         }
     }
+
+    override fun setupViewModel() {
+    }
+
+    override fun setupObservers() {
+    }
+
 }
